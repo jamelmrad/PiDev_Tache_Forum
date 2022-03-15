@@ -1,6 +1,8 @@
 package com.jamel.pi.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.jamel.pi.entities.Post;
+import javafx.geometry.Pos;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,9 @@ public class CommentDto {
     @JsonProperty("posted_at")
     private Date posted_at;
 
+    @JsonProperty("post")
+    private PostDto postDto;
+
     public Long getId() {
         return id;
     }
@@ -46,5 +51,13 @@ public class CommentDto {
 
     public void setPosted_at(Date posted_at) {
         this.posted_at = posted_at;
+    }
+
+    public PostDto getPostDto() {
+        return postDto;
+    }
+
+    public void setPostDto(PostDto postDto) {
+        this.postDto = postDto;
     }
 }

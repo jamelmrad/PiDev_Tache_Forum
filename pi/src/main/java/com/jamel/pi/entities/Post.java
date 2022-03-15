@@ -31,20 +31,6 @@ public class Post implements Serializable {
     @Column
     private Date posted_at;
 
-    public Post(String c){
-        this.Content = c;
-        this.posted_at = new Date();
-    }
-
-    public Post(Long id, String c, Date d){
-        this.id =id;
-        this.Content=c;
-        this.posted_at=d;
-    }
-    public Post(){
-        this.Content="no content";
-        this.posted_at = new Date();
-    }
 
 
     @OneToMany(fetch = FetchType.LAZY , mappedBy= "post")
@@ -98,4 +84,23 @@ public class Post implements Serializable {
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
     }
+
+
+    //////////////////////////////////////////
+    public Post(String c){
+        this.Content = c;
+        this.posted_at = new Date();
+    }
+
+    public Post(Long id, String c, Date d){
+        this.id =id;
+        this.Content=c;
+        this.posted_at=d;
+    }
+    public Post(){
+        this.Content="no content";
+        this.posted_at = new Date();
+    }
+
+
 }

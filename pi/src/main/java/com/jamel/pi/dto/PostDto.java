@@ -1,6 +1,7 @@
 package com.jamel.pi.dto;
 
 
+import com.jamel.pi.entities.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,19 @@ public class PostDto {
     @JsonProperty("posted_at")
     private Date posted_at;
 
+    @JsonProperty("employee")
+    private EmployeeDto employeeDto;
+
+
+    /*************************************getters-setters*******************************/
+
+    public EmployeeDto getEmployeeDto() {
+        return employeeDto;
+    }
+
+    public void setEmployeeDto(EmployeeDto employeeDto) {
+        this.employeeDto = employeeDto;
+    }
 
     public Date getPosted_at() {
         return posted_at;

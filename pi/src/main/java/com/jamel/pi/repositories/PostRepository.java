@@ -1,6 +1,7 @@
 package com.jamel.pi.repositories;
 
 import com.jamel.pi.dto.PostDto;
+import com.jamel.pi.entities.Comment;
 import com.jamel.pi.entities.Post;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Sort;
@@ -23,6 +24,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     void deleteAll(Iterable<? extends Post> entities);
 
     List<Post> findByEmployee_Id(Long id);
+
 
     //List<Post> findAllByEmployee_Id(Sort sort);
 

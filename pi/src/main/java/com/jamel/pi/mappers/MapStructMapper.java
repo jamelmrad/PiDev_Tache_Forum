@@ -18,6 +18,9 @@ public interface MapStructMapper {
 
     PostDto postToPostDto(Post post);
 
+    Employee mapEmp(Long value);
+
+    Post mapPos(Long value);
     //Post postDtoToPost(PostDto postDto);
 
 

@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-03-08T05:29:05+0100",
+    date = "2022-03-15T11:45:39+0100",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_60 (Oracle Corporation)"
 )
 @Component
@@ -69,6 +69,28 @@ public class MapStructMapperImpl implements MapStructMapper {
     }
 
     @Override
+    public Employee mapEmp(Long value) {
+        if ( value == null ) {
+            return null;
+        }
+
+        Employee employee = new Employee();
+
+        return employee;
+    }
+
+    @Override
+    public Post mapPos(Long value) {
+        if ( value == null ) {
+            return null;
+        }
+
+        Post post = new Post();
+
+        return post;
+    }
+
+    @Override
     public CommentDto commentToCommentDto(Comment comment) {
         if ( comment == null ) {
             return null;
@@ -91,10 +113,10 @@ public class MapStructMapperImpl implements MapStructMapper {
 
         EmployeeAllDto employeeAllDto = new EmployeeAllDto();
 
-        employeeAllDto.setPosts( postSetToPostDtoSet( employee.getPosts() ) );
         employeeAllDto.setId( employee.getId() );
         employeeAllDto.setNom( employee.getNom() );
         employeeAllDto.setPrenom( employee.getPrenom() );
+        employeeAllDto.setPosts( postSetToPostDtoSet( employee.getPosts() ) );
 
         return employeeAllDto;
     }

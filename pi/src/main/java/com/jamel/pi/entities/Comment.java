@@ -1,15 +1,12 @@
 package com.jamel.pi.entities;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
-
 
 @Getter
 @Setter
@@ -56,8 +53,8 @@ public class Comment implements Serializable {
     @JoinColumn(name = "post_id" , nullable = false)
     Post post;
 
-    public Post getPost() {
-        return post;
+    public Long getPost() {
+        return post.getId();
     }
 
     public void setPost(Post post) {
@@ -88,16 +85,4 @@ public class Comment implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Comment)) return false;
-        Comment comment = (Comment) o;
-        return id.equals(comment.id) && content.equals(comment.content) && posted_at.equals(comment.posted_at) && post.equals(comment.post);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, content, posted_at, post);
-    }
 }

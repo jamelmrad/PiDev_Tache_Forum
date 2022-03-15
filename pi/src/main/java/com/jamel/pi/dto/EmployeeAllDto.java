@@ -29,13 +29,7 @@ public class EmployeeAllDto {
     @JsonProperty("posts")
     private Set<PostDto> posts;
 
-    public Set<PostDto> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(Set<PostDto> posts) {
-        this.posts = posts;
-    }
+    /*********************************************getters-setters*****************************************/
 
     public Long getId() {
         return id;
@@ -59,5 +53,13 @@ public class EmployeeAllDto {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    public Set<PostDto> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Set<PostDto> posts) {
+        this.posts = posts;
     }
 }
